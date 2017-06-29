@@ -3,7 +3,7 @@
     <schematype>flat</schematype>
     <control>
         <!--<duration>1800</duration>-->
-        <duration>1200</duration>
+        <duration>120</duration>
         <startmonth>1</startmonth>
         <startyear>0</startyear>
         <decay>lazy</decay>
@@ -145,7 +145,7 @@
                     <val>1</val>
                     <val>1</val>
                     <val>1</val>
-                    <val>1</val>
+                    <val>2</val>
                 </n_build>
             </DeployInst>
         </config>
