@@ -95,7 +95,7 @@
                 </fuel_outcommods>
                 <cycle_time>45</cycle_time> <!-- BU/30days *Mcore/batch / P_eff = 50./(30)*88758./3./(3000*0.9) -->
                 <refuel_time>0</refuel_time>
-                <assem_size>90000</assem_size><!-- Core_inv / Core_Ass = 88758 / 3. -->
+                <assem_size>9000</assem_size><!-- Core_inv / Core_Ass = 88758 / 3. -->
                 <n_assem_core>1</n_assem_core>
                 <n_assem_batch>1</n_assem_batch>
                 <power_cap>900</power_cap>

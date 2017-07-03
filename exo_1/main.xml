@@ -3,7 +3,7 @@
     <schematype>flat</schematype>
     <control>
         <!--<duration>1800</duration>-->
-        <duration>1200</duration>
+        <duration>120</duration>
         <startmonth>1</startmonth>
         <startyear>0</startyear>
         <decay>lazy</decay>
@@ -127,7 +127,6 @@
                 <prototypes>
                     <val>waste</val>
                     <val>nu_src</val>
-                    <val>enrichment</val>
                     <val>storage_uox_spent</val>
                     <val>pwr</val>
                 </prototypes>
@@ -137,11 +136,9 @@
                     <val>1</val>
                     <val>1</val>
                     <val>1</val>
-                    <val>1</val>
                 </build_times>
 
                 <n_build>
-                    <val>1</val>
                     <val>1</val>
                     <val>1</val>
                     <val>1</val>
