@@ -57,7 +57,7 @@
 
     <prototype>
         <name>pwr</name>
-        <lifetime>720</lifetime>
+        <lifetime>1200</lifetime>
         <config>
             <cyclassReactor>
                 <eq_model>MLP_Kinf</eq_model>
