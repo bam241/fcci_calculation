@@ -3,7 +3,7 @@
     <schematype>flat</schematype>
     <control>
         <!--<duration>1800</duration>-->
-        <duration>120</duration>
+        <duration>1200</duration>
         <startmonth>1</startmonth>
         <startyear>0</startyear>
         <decay>lazy</decay>
@@ -76,7 +76,7 @@
 
     <prototype>
         <name>pwr</name>
-        <lifetime>720</lifetime>
+        <lifetime>1200</lifetime>
         <config>
             <cyclassReactor>
                 <eq_model>MLP_Kinf</eq_model>
@@ -111,7 +111,7 @@
     </prototype>
     <prototype>
         <name>pwr2</name>
-        <lifetime>720</lifetime>
+        <lifetime>1200</lifetime>
         <config>
             <cyclassReactor>
                 <eq_model>MLP_Kinf</eq_model>
