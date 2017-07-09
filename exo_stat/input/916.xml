@@ -1,0 +1,171 @@
+<simulation xmlns:xi="http://www.w3.org/2001/XInclude">
+
+    <schematype>flat</schematype>
+    <control>
+        <!--<duration>1800</duration>-->
+        <duration>1200</duration>
+        <startmonth>1</startmonth>
+        <startyear>0</startyear>
+        <decay>lazy</decay>
+        <explicit_inventory>true</explicit_inventory>
+    </control>
+
+    <archetypes>
+        <spec> <lib>cycamore</lib> <name>Source</name></spec>
+        <spec> <lib>cycamore</lib> <name>DeployInst</name></spec>
+        <spec> <lib>cycamore</lib> <name>Sink</name></spec>
+        <spec> <lib>cycamore</lib> <name>Enrichment</name> </spec>
+        <spec> <lib>cycamore</lib> <name>Reactor</name> </spec>
+        <spec> <lib>cycamore</lib> <name>Storage</name> </spec>
+        <spec> <lib>cycamore</lib> <name>FuelFab</name> </spec>
+        <spec> <lib>cycamore</lib> <name>Separations</name> </spec>
+        <spec> <lib>cycamore</lib> <name>Mixer</name> </spec>
+        <spec><lib>cyclass</lib><name>Reactor</name><alias>cyclassReactor</alias></spec>
+    </archetypes>
+
+
+    <recipe>
+        <name>r_uox</name>
+        <basis>mass</basis>
+        <nuclide><id>U235</id>   <comp>0.04920189843707615</comp> </nuclide>
+        <nuclide><id>U238</id>   <comp>0.9507981015629239</comp> </nuclide>
+    </recipe>
+
+    <prototype>
+        <name>nu_src</name>
+        <config>
+            <Source>
+                <outcommod>c_uox</outcommod>
+                <outrecipe>r_uox</outrecipe>
+
+                <inventory_size>1e100</inventory_size>
+                <throughput>1e100</throughput>
+            </Source>
+        </config>
+    </prototype>
+
+
+    <prototype>
+        <name>waste</name>
+        <config>
+            <Sink>
+                <in_commods><val>waste</val></in_commods>
+                <capacity>1e100</capacity>
+            </Sink>
+        </config>
+    </prototype>
+
+    <prototype>
+        <name>pwr</name>
+        <lifetime>720</lifetime>
+        <config>
+            <cyclassReactor>
+                <eq_model>MLP_Kinf</eq_model>
+                <eq_command>/Users/mouginot/work/app/CLASS/DATA_BASES/PWR/UOX/EQModel/MLP_KINF/PWR_UOX.xml,/Users/mouginot/work/app/CLASS/DATA_BASES/PWR/UOX/EQModel/MLP_KINF/PWR_UOX.nfo,3,1.034</eq_command>
+
+                <ir_model>RK4</ir_model>
+                <ir_command>none</ir_command>
+
+                <xs_model>XSM_MLP</xs_model>
+                <xs_command>/Users/mouginot/work/app/CLASS/DATA_BASES/PWR/UOX/XSModel/30Wg_FullUOX/,Data_Base_Info.nfo,false</xs_command>
+                <fuel_type>uox</fuel_type>
+                <fuel_incommods>
+                    <val>c_uox</val>
+                </fuel_incommods>
+                <fuel_prefs>
+                    <val>10</val>
+                </fuel_prefs>
+
+                <fuel_outcommods> 
+                    <val>c_uox_spent</val>
+                </fuel_outcommods>
+                <cycle_time>47</cycle_time> <!-- BU/30days *Mcore/batch / P_eff = 50./(30)*88758./3./(3000*0.9) -->
+                <refuel_time>0</refuel_time>
+                <assem_size>90000</assem_size><!-- Core_inv / Core_Ass = 88758 / 3. -->
+                <n_assem_core>1</n_assem_core>
+                <n_assem_batch>1</n_assem_batch>
+                <power>3275.299627560434</power>
+                <power_cap>982.5898882681302</power_cap>
+                <burnup>50.795870670120394</burnup>
+
+            </cyclassReactor>
+        </config>
+    </prototype>
+
+    <prototype>
+        <name>storage_uox_spent</name>
+        <config>
+            <Storage>
+                <in_commods>
+                    <val>c_uox_spent</val>
+                </in_commods>
+                <out_commods>
+                    <val>c_uox_spent_stored</val>
+                </out_commods>
+                <residence_time>0</residence_time>
+            </Storage>
+        </config>
+    </prototype>
+
+    <prototype>
+        <name>deployer_main_CHAIN</name>
+        <config>
+            <DeployInst>
+                <prototypes>
+                    <val>waste</val>
+                    <val>nu_src</val>
+                    <val>storage_uox_spent</val>
+                    <val>pwr</val>
+                    <val>pwr</val>
+                    <val>pwr</val>
+                    <val>pwr</val>
+                    <val>pwr</val>
+                    <val>pwr</val>
+                    <val>pwr</val>
+                    <val>pwr</val>
+                    <val>pwr</val>
+                    <val>pwr</val>
+                </prototypes>
+
+                <build_times>
+                    <val>1</val>
+                    <val>1</val>
+                    <val>1</val>
+                    <val>1</val>
+                    <val>121</val>
+                    <val>241</val>
+                    <val>361</val>
+                    <val>481</val>
+                    <val>601</val>
+                    <val>721</val>
+                    <val>841</val>
+                    <val>961</val>
+                    <val>1081</val>
+                </build_times>
+
+                <n_build>
+                    <val>1</val>
+                    <val>1</val>
+                    <val>1</val>
+                    <val>1</val>
+                    <val>1</val>
+                    <val>1</val>
+                    <val>1</val>
+                    <val>1</val>
+                    <val>1</val>
+                    <val>1</val>
+                    <val>1</val>
+                    <val>1</val>
+                    <val>1</val>
+                </n_build>
+            </DeployInst>
+        </config>
+    </prototype>
+
+
+
+
+    <agent> <name>deployer_1</name> <prototype>deployer_main_CHAIN</prototype> </agent>
+
+
+</simulation>
