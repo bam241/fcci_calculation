@@ -27,8 +27,8 @@
     <recipe>
         <name>r_uox</name>
         <basis>mass</basis>
-        <nuclide><id>U235</id>   <comp>0.04898199502029049</comp> </nuclide>
-        <nuclide><id>U238</id>   <comp>0.9510180049797095</comp> </nuclide>
+        <nuclide><id>U235</id>   <comp>0.048159298225236714</comp> </nuclide>
+        <nuclide><id>U238</id>   <comp>0.9518407017747633</comp> </nuclide>
     </recipe>
 
     <prototype>
@@ -61,13 +61,13 @@
         <config>
             <cyclassReactor>
                 <eq_model>MLP_Kinf</eq_model>
-                <eq_command>/Users/mouginot/work/app/CLASS/DATA_BASES/PWR/UOX/EQModel/MLP_KINF/PWR_UOX.xml,/Users/mouginot/work/app/CLASS/DATA_BASES/PWR/UOX/EQModel/MLP_KINF/PWR_UOX.nfo,3,1.034</eq_command>
+                <eq_command>/tmp/mouginot/opt/CLASS/DATA_BASES/PWR/UOX/EQModel/MLP_KINF/PWR_UOX.xml,/tmp/mouginot/opt/CLASS/DATA_BASES/PWR/UOX/EQModel/MLP_KINF/PWR_UOX.nfo,3,1.034</eq_command>
 
                 <ir_model>RK4</ir_model>
                 <ir_command>none</ir_command>
 
                 <xs_model>XSM_MLP</xs_model>
-                <xs_command>/Users/mouginot/work/app/CLASS/DATA_BASES/PWR/UOX/XSModel/30Wg_FullUOX/,Data_Base_Info.nfo,false</xs_command>
+                <xs_command>/tmp/mouginot/opt/CLASS/DATA_BASES/PWR/UOX/XSModel/30Wg_FullUOX/,Data_Base_Info.nfo,false</xs_command>
                 <fuel_type>uox</fuel_type>
                 <fuel_incommods>
                     <val>c_uox</val>
@@ -79,14 +79,14 @@
                 <fuel_outcommods> 
                     <val>c_uox_spent</val>
                 </fuel_outcommods>
-                <cycle_time>63</cycle_time> <!-- BU/30days *Mcore/batch / P_eff = 50./(30)*88758./3./(3000*0.9) -->
+                <cycle_time>34</cycle_time> <!-- BU/30days *Mcore/batch / P_eff = 50./(30)*88758./3./(3000*0.9) -->
                 <refuel_time>0</refuel_time>
                 <assem_size>90000</assem_size><!-- Core_inv / Core_Ass = 88758 / 3. -->
                 <n_assem_core>1</n_assem_core>
                 <n_assem_batch>1</n_assem_batch>
-                <power>2879.120589501989</power>
-                <power_cap>863.7361768505966</power_cap>
-                <burnup>60.3104085911847</burnup>
+                <power>2451.8464778991447</power>
+                <power_cap>735.5539433697434</power_cap>
+                <burnup>28.145831002981343</burnup>
 
             </cyclassReactor>
         </config>

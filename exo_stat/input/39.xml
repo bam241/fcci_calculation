@@ -27,8 +27,8 @@
     <recipe>
         <name>r_uox</name>
         <basis>mass</basis>
-        <nuclide><id>U235</id>   <comp>0.035563251978730163</comp> </nuclide>
-        <nuclide><id>U238</id>   <comp>0.9644367480212699</comp> </nuclide>
+        <nuclide><id>U235</id>   <comp>0.043204919920052015</comp> </nuclide>
+        <nuclide><id>U238</id>   <comp>0.956795080079948</comp> </nuclide>
     </recipe>
 
     <prototype>
@@ -61,13 +61,13 @@
         <config>
             <cyclassReactor>
                 <eq_model>MLP_Kinf</eq_model>
-                <eq_command>/Users/mouginot/work/app/CLASS/DATA_BASES/PWR/UOX/EQModel/MLP_KINF/PWR_UOX.xml,/Users/mouginot/work/app/CLASS/DATA_BASES/PWR/UOX/EQModel/MLP_KINF/PWR_UOX.nfo,3,1.034</eq_command>
+                <eq_command>/tmp/mouginot/opt/CLASS/DATA_BASES/PWR/UOX/EQModel/MLP_KINF/PWR_UOX.xml,/tmp/mouginot/opt/CLASS/DATA_BASES/PWR/UOX/EQModel/MLP_KINF/PWR_UOX.nfo,3,1.034</eq_command>
 
                 <ir_model>RK4</ir_model>
                 <ir_command>none</ir_command>
 
                 <xs_model>XSM_MLP</xs_model>
-                <xs_command>/Users/mouginot/work/app/CLASS/DATA_BASES/PWR/UOX/XSModel/30Wg_FullUOX/,Data_Base_Info.nfo,false</xs_command>
+                <xs_command>/tmp/mouginot/opt/CLASS/DATA_BASES/PWR/UOX/XSModel/30Wg_FullUOX/,Data_Base_Info.nfo,false</xs_command>
                 <fuel_type>uox</fuel_type>
                 <fuel_incommods>
                     <val>c_uox</val>
@@ -84,9 +84,9 @@
                 <assem_size>90000</assem_size><!-- Core_inv / Core_Ass = 88758 / 3. -->
                 <n_assem_core>1</n_assem_core>
                 <n_assem_batch>1</n_assem_batch>
-                <power>3051.0138168539456</power>
-                <power_cap>915.3041450561836</power_cap>
-                <burnup>52.324828043796714</burnup>
+                <power>3268.769060558856</power>
+                <power_cap>980.6307181676567</power_cap>
+                <burnup>55.35637609810782</burnup>
 
             </cyclassReactor>
         </config>
