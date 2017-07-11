@@ -1,0 +1,3 @@
+rm cyclus.sqlite; cyclus test1.xml -v2; mv cyclus.sqlite cyclus_test1.sqlite
+rm cyclus.sqlite; cyclus test2.xml -v2; mv cyclus.sqlite cyclus_test2.sqlite
+rm cyclus.sqlite; cyclus test3.xml -v2; mv cyclus.sqlite cyclus_test3.sqlite
